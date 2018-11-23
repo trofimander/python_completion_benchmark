@@ -1,3 +1,8 @@
+class A:
+    def foo(self):
+        pass
+
+
 def foo(x):
-    if (isinstance(x, str)):
-        x.find()  # find
+    if isinstance(x, A):
+        x.foo()  # foo

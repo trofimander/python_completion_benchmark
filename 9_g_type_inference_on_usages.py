@@ -1,5 +1,10 @@
+class A():
+    def foo(self):
+        pass
+
+
 def f(x):
-    x.find()  # find
+    x.foo()  # foo
 
 
-f('foo')
+f(A())

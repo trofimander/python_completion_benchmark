@@ -1,18 +1,25 @@
-# Assuming h() returns an int
-from module1 import h
+# Assuming h() returns instance of E
+from module1 import e
+
+
+class C:
+    def foo(self):
+        pass
+
+
+class D:
+    def bar(self):
+        pass
 
 
 def f():
-    return 0
+    return C
 
 
-def g():
-    return f(), 'foo', h()
+a = f()
+b = D()
+c = e()
 
-
-x = g()  # x is a Tuple[int, str, int]
-
-x.count()  # count
-x[0].bit_length()  # bit_length
-x[1].find()  # find
-x[2].bit_length()  # bit_length
+a.foo(C())  # foo
+b.bar()  # bar
+c.baz()  # baz

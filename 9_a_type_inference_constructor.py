@@ -1,9 +1,4 @@
-x = [1, 2, 3]  # x is a List[int]
-
-x.append()  # append
-
-
-class C:
+class C(object):
     def foo(self):
         pass
 

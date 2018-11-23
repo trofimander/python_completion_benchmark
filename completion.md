@@ -93,7 +93,6 @@
     * [ ] Dynamic modification of `sys.path` in user or library code (not in PyCharm)
     * [ ] Import hooks via `sys.meta_path` and `sys.path_hooks` (not in PyCharm)
     
-
 5. Keyword arguments
     * [x] Static keyword arguments
 
@@ -105,12 +104,12 @@
     (**kwargs): ...`)
 
 6. Overridden and magic attributes
-    * [ ] Functions in classes after `def`
-    * [ ] Class-level assignments
+    * [x] Functions in classes after `def`
+    * [x] Class-level assignments
 7. Special strings
-    * [ ] Key names for dicts and dict-like objects (only for locally-defined non-nested dicts in PyCharm)
-    * [ ] Names for `__all__` in modules
-    * [ ] File system paths in string literals (only in some places in PyCharm)
+    * [x] Key names for dicts and dict-like objects (only for locally-defined non-nested dicts in PyCharm)
+    * [x] Names for `__all__` in modules
+    * [x] File system paths in string literals (only in some places in PyCharm)
     * [ ] Library-specific strings (e.g. foreign keys in Django ORM or various settings in settings.py)
 8. Type hints
     * [x] Python stubs (*.pyi) take precedence over regular (*.py) files in resolving all names
@@ -181,19 +180,28 @@
               sys = __import__('sys')  # 'sys' can be an arbitrary complex expression, depending on how powerful the static evaluator is
               sys  # <Module 'sys'> with all its attributes
               
-        * [ ] Types provided via the descriptor protocol (`__get__`)
+        * [x] Types provided via the descriptor protocol (`__get__`)
+        
+        * [x] Type for the components of a tuple
+        
+              x = (1, 'foo', [1, 2, 3])
+              a, b, c = x  # a is an int, b is a str, c is a List[int]
+              x[0]  # x[0] is an int
+              x[1]  # x[1] is a str
+              x[2]  # x[s] is a List[int]
         
 10. The attributes of an object
-    * Static attributes of an object (provided that we know its type, see the section about types above)
+    * [x] Static attributes of an object (provided that we know its type, see the section about types above)
         * Class + instance attributes for an instance
         * Metaclass + class attributes for a class
-        * Compliance to Python MRO attribute resolution order for inheritance hierarchies
-    * Instance attributes added after an object has been created (only for local definition scopes in PyCharm)
-    * Class attributes added after a class has been created (only for local definition scopes in PyCharm)
-    * Attributes of descendant classes available in a mixin class (not in PyCharm)
-    * Dynamic attributes via `__getattr__` and `__getattribute__`, depending on how powerful the static evaluator is (not in PyCharm)
-    * Dynamic attributes after `hasattr()` checks
-    * Dynamic attributes via custom class creation logic in metaclasses (not in PyCharm)
-    * Highly dynamic stdlib classes and their descendants (namedtuples and dataclasses in PyCharm)
-    * Attributes of binary modules (available via skeletons in PyCharm)
+        * [ ] Compliance to Python MRO attribute resolution order for inheritance hierarchies
+    * [x] Instance attributes added after an object has been created (only for local definition scopes in PyCharm)
+    * [x] Class attributes added after a class has been created (only for local definition scopes in PyCharm)
+    * [x] Attributes of descendant classes available in a mixin class (not in PyCharm)
+    * [x] Dynamic attributes via `__getattr__` and `__getattribute__`, depending on how powerful the static evaluator is
+     (not in PyCharm)
+    * [x] Dynamic attributes after `hasattr()` checks
+    * [x] Highly dynamic stdlib classes and their descendants (namedtuples and dataclasses in PyCharm)
+    * [x] Attributes of binary modules (available via skeletons in PyCharm)
+    * [ ] Dynamic attributes via custom class creation logic in metaclasses (not in PyCharm)
     

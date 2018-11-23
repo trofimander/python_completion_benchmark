@@ -1,7 +1,12 @@
-def f(x: int) -> int:
-    x.bit_length()  # bit_length
-    return 0
+class A:
+    def foo(self):
+        pass
 
 
-y = f(1)  # y is an int
-y.bit_length()  # bit_length
+def f(x: A) -> A:
+    x.foo()  # foo
+    return A()
+
+
+y = f(A())  # y is A
+y.foo()  # foo

@@ -1,11 +1,19 @@
+class C:
+    def foo(self):
+        pass
+
+
+class D:
+    def bar(self):
+        pass
+
 def f(c):
-    x = [1, 2, 3]
-    y = x  # y is a List[int]
-    y.append()  # append
+    x = C()
+    y = x
+    y.foo()  # foo
     if c:
         z = y
     else:
-        z = 'foo'
-    z.append()  # append
-    z.find()  # find
-    print(z)  # z is a Union[List[int], str]
+        z = D()
+    z.foo()  # foo
+    z.bar()  # bar
