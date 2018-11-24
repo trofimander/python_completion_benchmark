@@ -1,6 +1,3 @@
-# Example: imported names in various scopes
-# Given that all the modules are importable
-
 import foo
 
 foo  # foo

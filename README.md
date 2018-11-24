@@ -50,7 +50,6 @@ category.
               del foo
               foo  # No 'foo' in completion
         
-        * Names can become unavailable after `del` (not in PyCharm)
     * [x] Per-module dynamic names via modification of `globals()` and `locals()` (not in PyCharm)
     
           globals()['foo'] = 'bar'
@@ -62,6 +61,8 @@ category.
           print(foo2)  # foo2
 
           # and so on, depending on how powerful the static evaluator is
+          
+    * [x] Names can become unavailable after `del` (not in PyCharm)
 
 4. Import statements
     * [x] Regular Python packages and modules that exist on the file system in analyzed directories
