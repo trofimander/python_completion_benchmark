@@ -5,4 +5,4 @@ class C(object):
 
 y = C()
 
-y.foo # foo
+y.foo() # foo
