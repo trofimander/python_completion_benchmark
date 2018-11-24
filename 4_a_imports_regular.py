@@ -1,2 +1,2 @@
-import math  #  math
+import foo  #  foo
 
