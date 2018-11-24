@@ -1,5 +1,5 @@
 import _socket  # _socket
 
 
-_socket.socket  # socket
+x = _socket.socket  # socket
 
