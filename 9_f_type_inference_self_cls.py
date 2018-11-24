@@ -5,11 +5,11 @@ class A(object):
         self.attr = 1
 
     def foo(self):
-        self.attr  # attr
+        print(self.attr)  # attr
 
     @classmethod
     def static(cls):
-        cls.class_attr # class_attr
+        print(cls.class_attr) # class_attr
 
-A.class_attr # class_attr
+print(A.class_attr) # class_attr
 A.static() # static
