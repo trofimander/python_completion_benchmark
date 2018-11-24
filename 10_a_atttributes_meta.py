@@ -11,8 +11,8 @@ class C(metaclass=M):
         self.baz = 1
 
 
-x1 = M.foo  # foo
-x2 = C.foo  # foo
+x1 = M.foo()  # foo
+x2 = C.foo()  # foo
 x3 = C().foo  # NO!
 
 
