@@ -212,3 +212,10 @@ category.
     * [x] Foreign key id 
     * [x] Relation in string literal
     * [x] Special fields
+    * [x] Template paths
+    * [x] Removed deprecated attribute
+    
+12. Numpy/Pandas
+    * [x] Type inference when using dtype in ndarrays
+    * [x] Dynamically generated types
+    * [x] Pandas Dataframes attributes 
