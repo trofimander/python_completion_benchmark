@@ -1,23 +1,23 @@
 class A:
     def __getattr__(self, item):
-        if item == 'foo':
+        if item == 'foogza':
             return item
 
 
 x = A()
-x.foo  # foo
+x.foogza  # foogza
 
 
 class B:
     def __getattr__(self, item):
         for i in range(1, 10):
-            if item == "foo" + str(i):
+            if item == "foogza" + str(i):
                 return item
 
 
 b = B()
 
-b.foo1  # foo1
+b.foogza1  # foogza1
 
 
 class C:
@@ -26,10 +26,10 @@ class C:
 c = C()
 
 for i in range(1, 10):
-    setattr(c, "foo" + str(i), 1)
+    setattr(c, "foorma" + str(i), 1)
 
 
-c.foo1 # foo1
+c.foorma2 # foorma1
 
 
 for i in range(1, 10):

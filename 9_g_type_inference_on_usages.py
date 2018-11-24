@@ -1,10 +1,10 @@
 class A():
-    def foo(self):
+    def foo999(self):
         pass
 
 
 def f(x):
-    x.foo()  # foo
+    x.foo999()  # foo
 
 
 f(A())

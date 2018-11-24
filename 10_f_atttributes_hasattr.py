@@ -1,3 +1,3 @@
 def foo(x):
-    if hasattr(x, 'bar'):
-        x.bar  # bar
+    if hasattr(x, 'barbar'):
+        x.barbar  # barbar
