@@ -3,6 +3,6 @@ class C(object):
         pass
 
 
-y = C()  # y is a C
+y = C()
 
 y.foo # foo

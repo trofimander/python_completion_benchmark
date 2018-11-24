@@ -8,5 +8,5 @@ def f(x: A) -> A:
     return A()
 
 
-y = f(A())  # y is A
+y = f(A())
 y.foo()  # foo

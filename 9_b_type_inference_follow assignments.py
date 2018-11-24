@@ -7,6 +7,7 @@ class D:
     def bar(self):
         pass
 
+
 def f(c):
     x = C()
     y = x
