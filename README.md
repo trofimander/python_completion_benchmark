@@ -113,7 +113,6 @@ category.
     * [x] Key names for dicts and dict-like objects (only for locally-defined non-nested dicts in PyCharm)
     * [x] Names for `__all__` in modules
     * [x] File system paths in string literals (only in some places in PyCharm)
-    * [ ] Library-specific strings (e.g. foreign keys in Django ORM or various settings in settings.py)
 8. Type hints
     * [x] Python stubs (*.pyi) take precedence over regular (*.py) files in resolving all names
     * [x] String-based type hints
@@ -208,3 +207,7 @@ category.
     * [x] Attributes of binary modules (available via skeletons in PyCharm)
     * [ ] Dynamic attributes via custom class creation logic in metaclasses (not in PyCharm)
     
+11. Django completion
+    * [x] Foreign key id 
+    * [x] Relation in string literal
+    * [x] Special fields
