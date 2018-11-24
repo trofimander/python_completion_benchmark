@@ -129,69 +129,69 @@ category.
               # 'int', 'str' in the line above
 
 9. Type inference
-        * [x] Simple constructor calls / literals
-        
-              x = [1, 2, 3]  # x is a List[int]
+    * [x] Simple constructor calls / literals
+    
+          x = [1, 2, 3]  # x is a List[int]
+          
+          class C: ...
+          y = C()  # y is a C
+    
+    * [x] Follow assignments chain in a single scope
+    
+          def f(c):
+              x = [1, 2, 3]
+              y = x  # y is a List[int]
+              if c:
+                  z = y
+              else:
+                  z = 'foo'
+              print(z)  # z is a Union[List[int], str]
+    
+    * [x] Return types of function calls, call trees (can span many modules)
+    
+          # Assuming h() returns an int
+          from module1 import h
+    
+          def f():
+              return 0
+          
+          def g():
+              return f(), 'foo', h()
+          
+          x = g()  # x is a Tuple[int, str, int]
+          
+    * [x] Instance checks (`isinstance`, `issubclass`)
+    
+    * [x] Type hints
+    
+          def f(x: int) -> int: ...
+              x  # x is an int
+          
+          y = f()  # y is an int
+    
+    * [x] Types for `self` / `cls` parameters in methods
+    
+    * [x] Types of parameters based on their usages (only for module-local usages in PyCharm)
+    
+          def f(x):
+              x  # x is a str (only for code completion in PyCharm)
               
-              class C: ...
-              y = C()  # y is a C
-        
-        * [x] Follow assignments chain in a single scope
-        
-              def f(c):
-                  x = [1, 2, 3]
-                  y = x  # y is a List[int]
-                  if c:
-                      z = y
-                  else:
-                      z = 'foo'
-                  print(z)  # z is a Union[List[int], str]
-        
-        * [x] Return types of function calls, call trees (can span many modules)
-        
-              # Assuming h() returns an int
-              from module1 import h
-        
-              def f():
-                  return 0
-              
-              def g():
-                  return f(), 'foo', h()
-              
-              x = g()  # x is a Tuple[int, str, int]
-              
-        * [x] Instance checks (`isinstance`, `issubclass`)
-        
-        * [x] Type hints
-        
-              def f(x: int) -> int: ...
-                  x  # x is an int
-              
-              y = f()  # y is an int
-        
-        * [x] Types for `self` / `cls` parameters in methods
-        
-        * [x] Types of parameters based on their usages (only for module-local usages in PyCharm)
-        
-              def f(x):
-                  x  # x is a str (only for code completion in PyCharm)
-                  
-              f('foo')
-        
-        * [x] Dynamic imports via `__import__` (not in PyCharm)
-        
-              sys = __import__('sys')  # 'sys' can be an arbitrary complex expression, depending on how powerful the static evaluator is
-              sys  # <Module 'sys'> with all its attributes
-              
-        * [x] Types provided via the descriptor protocol (`__get__`)
-        
-        * [x] Type for the components of a tuple
-        
-              x = (1, 'foo', [1, 2, 3])
-              a, b, c = x  # a is an int, b is a str, c is a List[int]
-              x[0]  # x[0] is an int
-              x[1]  # x[1] is a str
-              x[2]  # x[s] is a List[int]
+          f('foo')
+    
+    * [x] Dynamic imports via `__import__` (not in PyCharm)
+    
+          sys = __import__('sys')  # 'sys' can be an arbitrary complex expression, depending on how powerful the static evaluator is
+          sys  # <Module 'sys'> with all its attributes
+          
+    * [x] Types provided via the descriptor protocol (`__get__`)
+    
+    * [x] Type for the components of a tuple
+    
+          x = (1, 'foo', [1, 2, 3])
+          a, b, c = x  # a is an int, b is a str, c is a List[int]
+          x[0]  # x[0] is an int
+          x[1]  # x[1] is a str
+          x[2]  # x[s] is a List[int]
         
 10. The attributes of an object
     * [x] Static attributes of an object (provided that we know its type, see the section about types above)
