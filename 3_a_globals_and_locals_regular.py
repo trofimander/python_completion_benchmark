@@ -15,6 +15,3 @@ class C:
 
 bar  # No 'bar' in completion
 baz  # No 'baz' in completion
-
-del foo
-foo  # No 'foo' in completion

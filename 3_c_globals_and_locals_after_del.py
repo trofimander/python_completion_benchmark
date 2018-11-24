@@ -7,3 +7,9 @@ del bar
 
 print(foo)  # NO foo
 print(bar)  # NO bar
+
+import baz
+
+del baz
+
+baz # NO baz
